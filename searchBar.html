@@ -1,0 +1,133 @@
+<div class="searchbar">
+  <input id="searchbar" onkeyup="search_tpd()" type="text" name="search" placeholder="Search Watch Type" />
+  <button onClick="search_tpd()" class="btn-search">Search</button>
+</div>
+
+
+<table id="tpd-table" class="tpd-table">
+      <thead>
+        <tr role="row">
+          <th>MODEL</th>
+          <th>CALIBER</th>
+          <th>WINDING DIRECTION</th>
+          <th>TURNS PER DAY (TPD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="watch">
+            <td>RM 005   Felipe Massa Skeletonized Automatic</td>
+            <td>Calibre RM005-S</td>
+            <td>Both</td>
+            <td>741</td>
+          </tr>
+        <tr class="watch">
+          <td>RM 007   Ladies Watch</td>
+          <td>Calibre RM007-1</td>
+          <td>Both</td>
+          <td>395</td>
+        </tr>
+        <tr class="watch">
+          <td>RM 010   Skeletonized Automatic</td>
+          <td>Calibre RM005-S</td>
+          <td>Both</td>
+          <td>741</td>
+        </tr>
+        <tr class="watch">
+          <td>RM 011   Felipe Massa Skeletonized Automatic</td>
+          <td>Calibre RM011-S	</td>
+          <td>Both</td>
+          <td>741</td>
+        </tr>
+        <tr class="watch">
+          <td>RM 016   Skeletonized Automatic</td>
+          <td>Calibre RM005-S</td>
+          <td>Both</td>
+          <td>741</td>
+        </tr>
+        <tr class="watch">
+          <td>RM 023   Automatic</td>
+          <td>Calibre RM023</td>
+          <td>Both</td>
+          <td>741</td>
+        </tr>
+        <tr class="watch">
+          <td>RM 028   Diver's Watch</td>
+          <td>Calibre RMAS7</td>
+          <td>Both</td>
+          <td>741</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <style>
+      
+      .searchbar{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin: 50px 0px;
+      }
+      #searchbar{
+        padding:15px;
+        background-color: #f4f4f4;
+        border: 0px solid black;
+        width: 40%;
+        padding-left: 25px;
+        border-radius: 25px 0px 0px 25px;
+      }
+      .btn-search{
+        padding:15px 50px;
+        background-color: #000;
+        color: #fff;
+        border: 0px solid black;
+      }
+      .tpd-table {
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #c0c0c0;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+
+      .tpd-table th {
+        border-bottom: 1px solid #c0c0c0;
+        padding: 5px;
+        background: black;
+        color: white;
+        text-align: left;
+        top: 5rem;
+        position: sticky;
+      }
+
+      .tpd-table td {
+        border-bottom: 1px solid #c0c0c0;
+        text-align: left;
+        padding: 5px;
+      }
+
+      .tpd-table tbody tr:nth-child(even) {
+        background: #c0c0c0;
+      }
+
+      .tpd-table tbody tr:nth-child(odd) {
+        background: white;
+      }
+    </style>
+
+<script>
+  function search_tpd(){
+  let input = document.getElementById('searchbar').value
+  input = input.toLowerCase();
+  let x = document.getElementsByClassName("watch");
+  
+  for(i = 0; i < x.length; i++){
+    if(!x[i].innerHTML.toLowerCase().includes(input)){
+      x[i].style.display="none";
+    }else{
+      x[i].style.display="table-row";
+    }
+  }
+  
+}
+</script>
